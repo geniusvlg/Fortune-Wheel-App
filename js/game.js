@@ -10,6 +10,8 @@ loadCallback = function () {
   $('.btn-share-home').css('bottom', $h_footer + 10);
   $h_content = $('#content').outerHeight(true);
   var a_canvas;
+  console.log("Height: " + $h_content);
+  console.log("Width: " + $width);
   if ($width > $h_content + 20) {
     a_canvas = $h_content - 20;
     $('#canvas').css('margin-top', "20px");

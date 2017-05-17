@@ -791,7 +791,20 @@ and (min-device-height: 421px) and (max-device-height: 700px)
 }
 
 @media only screen and (min-device-width: 821px) and (max-device-width: 1060px)
-and (min-device-height: 701px) and (max-device-height: 1060px)
+and (min-device-height: 701px) and (max-device-height: 900px)
+{
+  #content {
+      display: block;
+    }
+  #canvas{
+    margin-top: 3%; 
+    width: 57%;
+    height: 60%;
+  }
+}
+
+@media only screen and (min-device-width: 821px) and (max-device-width: 1060px)
+and (min-device-height: 901px) and (max-device-height: 1060px)
 {
   #content {
       display: block;
