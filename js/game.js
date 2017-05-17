@@ -13,13 +13,13 @@ loadCallback = function () {
   console.log("Height: " + $h_content);
   console.log("Width: " + $width);
   if ($width > $h_content + 20) {
-    a_canvas = $h_content - 70;
-    $('#canvas').css('margin-top', "60px");
+    a_canvas = $h_content - 20;
+    $('#canvas').css('margin-top', "20px");
   }
   else {
     a_canvas = $width - 40;
     $mt = ($h_content - a_canvas) / 2;
-    $('#canvas').css('margin-top', $mt+ 30 + "px");
+    $('#canvas').css('margin-top', $mt+ 20 + "px");
   }
 
   $('#canvas').css('width', a_canvas + "px");
