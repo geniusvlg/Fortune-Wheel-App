@@ -1,8 +1,10 @@
 loadCallback = function () {
+  $scrolling_h = $('#scrolling').outerHeight(true);
+ 
   $h_header = $('#header').outerHeight(true);
   $h_footer = $('#footer').outerHeight(true);
   $h_window = $(window).outerHeight(true);
-  $h_content = $h_window - ($h_header + $h_footer);
+  $h_content = $h_window - ($h_header + $h_footer + $scrolling_h);
   $width = $(document).outerWidth(true);
 
   $('#content').css('height', $h_content).show();
@@ -10,18 +12,16 @@ loadCallback = function () {
   $('.btn-share-home').css('bottom', $h_footer + 10);
   $h_content = $('#content').outerHeight(true);
   var a_canvas;
-  console.log("Height: " + $h_content);
-  console.log("Width: " + $width);
-  if ($width > $h_content + 20) {
+  
+ 
+ if ($width > $h_content + 20) {
     a_canvas = $h_content - 20;
-    $('#canvas').css('margin-top', "20px");
   }
   else {
+    console.log("BINGO")
     a_canvas = $width - 40;
-    $mt = ($h_content - a_canvas) / 2;
-    $('#canvas').css('margin-top', $mt+ 20 + "px");
   }
-
+  $('#canvas').css('margin-top', $scrolling_h/2 + "px");
   $('#canvas').css('width', a_canvas + "px");
   $('#canvas').css('height', a_canvas + "px");
 };
