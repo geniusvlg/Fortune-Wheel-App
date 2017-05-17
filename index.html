@@ -1,0 +1,197 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+  <!-- Google Tag Manager -->
+<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-5LB5HHT"></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5LB5HHT');</script>
+<!-- End Google Tag Manager -->
+    <meta http-equiv="" content="text/html">
+    <meta name="title" content="Vòng quay may mắn">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+      <title>Vòng quay may mắn</title>
+      <!--<link rel="shortcut icon" href="/favicon.ico" />-->
+      <link rel="stylesheet" type="text/css" media="screen" href="css/style.css?v=1.1">
+<link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" media="screen" href="css/coder_update.css">
+      <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/jquery.rotate.js"></script>
+
+<script type="text/javascript" src="js/dev.js"></script>
+  </head>
+  <body>
+  <!-- Google Tag Manager (noscript) -->
+
+<!-- End Google Tag Manager (noscript) -->
+    <div id="wrapper" >
+      
+<div id="header">
+  <div class="info">
+          <div class="back-home">
+        <a href="/wap.php/vqmm"><i class="fa fa-arrow-left"></i> Vòng quay</a>
+      </div>
+        <!--<p class="name"><i class="fa fa-user"></i> </p>-->
+      <p class="phone"><i class="fa fa-phone"></i> 01687708009</p>
+      </div>
+
+  <div class="logo">
+    <a href="/wap.php/vqmm"><img src="images/logo.png"></a>
+  </div>
+</div>      <div id="content" >
+        
+<script type="text/javascript">
+  
+</script>
+
+<div id="canvas" >
+  <img id="wheel" src="images/wheel.png" > 
+  <div class="button not-select inactive" onclick="rotateImg()"><img src="images/btn-quay.png"></div>
+  <span class="spin"></span>
+  <span class="turn" ><span id="total-turn">0</span> lượt</span>
+</div>
+<div class="bg-left"></div>
+
+<a href="javascript:void(0)" onclick="shareFB(0)" class="btn-share-home" ></a>
+
+
+
+<input type="hidden" id="url_rotate" value="/wap.php/pageHome/rotate">
+<input type="hidden" id="url_reward" value="/wap.php/pageHome/reward">
+<input type="hidden" id="my_token" value="9c52d9ace9422550288f97048a81f4a2">
+
+<script type="text/javascript" src="js/game.js"></script>
+
+
+<script>
+  // $(document).ready(function () {
+  //   setTimeout(function () {
+  //     loadFacebook();
+  //   }, 1000);
+  // });
+
+  function loadFacebook() {
+    window.fbAsyncInit = function () {
+      FB.init({
+        appId: "741523366019021",
+        xfbml: true,
+        version: 'v2.8'
+      });
+      FB.AppEvents.logPageView();
+    };
+
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {
+        return;
+      }
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  }
+
+  function shareFB(should_reward) {
+
+        var token = $('#csrf_token').val();
+        var shouldDelayShareDialog = false;
+
+        $.ajax({
+          display: 'popup',
+          mobile_iframe: true,
+          url: "/wap.php/pageHome/shared",
+          dataType: 'json',
+          data: {_csrf_token: token, should_reward: should_reward},
+          success: function (data) {      
+
+            if (data.result === false) {
+              
+              //alert(data.message);
+              shouldDelayShareDialog = true;
+              showPopup('popup-error', data.message);
+            }
+              //location.reload();
+              if (shouldDelayShareDialog) {
+
+                  setTimeout(displayFBPopup, 3000);
+              } else {
+
+                  displayFBPopup;
+              }
+          }
+        });
+  }
+
+  var displayFBPopup = function() {
+
+    loading();  
+
+     window.location.href = "https://www.facebook.com/dialog/share?app_id=741523366019021&display=popup&href=http://tracking.viettel.vn/&redirect_uri=https://vongquay.viettel.vn/vqmm";
+
+    finishLoad();
+  }
+</script>
+<style>.back-home{display: block !important} #content{overflow: hidden !important}</style>      </div>
+      <div id="footer">
+<!--  <div>
+    <a href=""><img src="/wap/images/btn-bangvang.png"/></a>
+    <a href=""><img src="/wap/images/btn-quatang.png"/></a>
+    <a href="" class="btn btn-binhluan"><img src="/wap/images/btn-binhluan.png"/></a>
+    <a href="" class="btn btn-bangvang"><img src="/wap/images/btn-huongdan.png"/></a>
+    <a href="" class="btn btn-quatang"><img src="/wap/images/btn-thele.png"/></a>
+  </div>-->
+  
+  <div>
+    <a href="/wap.php/vqmm/bang-vang"><img src="images/btn-bangvang.png"></a>
+    <a href="/wap.php/vqmm/qua-tang"><img src="images/btn-quatang.png"></a>
+    <a href="/wap.php/vqmm/binh-luan" class="btn btn-binhluan"><img src="images/btn-binhluan.png"></a>
+    <a href="/wap.php/vqmm/huong-dan" class="btn btn-bangvang"><img src="images/btn-huongdan.png"></a>
+    <a href="/wap.php/vqmm/the-le" class="btn btn-quatang"><img src="images/btn-thele.png"></a>
+  </div>
+</div>    </div>
+    <div id="popup-result" class="popup">
+  <div class="popup-body text-center p30">
+    <div class="">
+      <a class="close"><i class="fa fa-close"></i></a>
+      <div class="header">Chúc mừng quý khách đã quay vào ô</div>
+      <div class="t16 bold mt10"></div>
+      <div class="mt10 description"></div>
+    </div>
+  </div>
+</div>
+<div id="popup-error" class="popup">
+  <div class="popup-body text-center p30">
+    <div class="" >
+      <a class="close"><i class="fa fa-close"></i></a>
+      <div class="description">Kết nối gặp gián đoạn, vui lòng vào mục quà tặng để kiểm tra kết quả quay. Xin cảm ơn !</div>
+    </div>
+  </div>
+</div>
+<div id="mask"></div>
+        <input id="csrf_token" type="hidden" value="5e6c955864fa3ba82709b26e51bd4edd">
+
+  <input type="hidden" id="shouldQuery2GetInstallMyVtAt">
+  <script type="text/javascript">
+    
+      $(window).load(function() {
+      
+          var shouldQuery4InstallMVAt = 0;          
+          
+          if (shouldQuery4InstallMVAt) {
+            
+             $.ajax({
+
+                url: "/wap.php/common/getInstallMyVTAt",
+                dataType: 'json'
+             });
+          }
+      });
+
+  </script>
+  
+
+  
+
+</body></html>
