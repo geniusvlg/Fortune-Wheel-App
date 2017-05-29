@@ -213,6 +213,7 @@ position: relative;
 }
 
 #scrolling .text{
+white-space: nowrap;
 font-size: 20px;
 position: absolute;
 width: 50vw;
